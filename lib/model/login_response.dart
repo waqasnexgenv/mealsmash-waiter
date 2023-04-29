@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:hungerz_ordering/model/restaurant.dart';
+import 'package:Mealsmash_Waiter/model/restaurant.dart';
 
 class LoginResponse {
   LoginResponse({

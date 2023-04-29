@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
 
 class ColorButton extends StatelessWidget {
   final String title;

@@ -6,15 +6,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Scart.dart';
-import 'package:hungerz_ordering/model/cart_response.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Scart.dart';
+import 'package:Mealsmash_Waiter/model/cart_response.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -82,8 +82,8 @@ class _CartInfoState extends State<CartInfo> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 30.0, horizontal: 5.0),
+                              padding:  EdgeInsets.symmetric(
+                                  vertical: 20.0.h, horizontal: 5.0.w),
                               child: widget.table.name == null
                                   ? Text(
                                       'Take away',
@@ -115,7 +115,7 @@ class _CartInfoState extends State<CartInfo> {
                                 () => widget.controller.scart.value.cartData ==
                                         null
                                     ? Container(
-                                        padding: EdgeInsets.only(top: 50),
+                                        padding: EdgeInsets.only(top: 30.h),
                                         child: Center(
                                           child: Text(
                                             "cartIsEmpty".tr,
@@ -132,7 +132,7 @@ class _CartInfoState extends State<CartInfo> {
                                             physics:
                                                 NeverScrollableScrollPhysics(),
                                             padding:
-                                                EdgeInsets.only(bottom: 150),
+                                                EdgeInsets.only(bottom: 100.h),
                                             itemCount: widget.controller.scart
                                                 .value.cartData!.length,
                                             shrinkWrap: true,
@@ -147,8 +147,8 @@ class _CartInfoState extends State<CartInfo> {
                                                   ListTile(
                                                     contentPadding:
                                                         EdgeInsets.symmetric(
-                                                            vertical: 5,
-                                                            horizontal: 10),
+                                                            vertical: 5.w,
+                                                            horizontal: 10.h),
                                                     leading: GestureDetector(
                                                       onTap: () {},
                                                       child:
@@ -160,7 +160,7 @@ class _CartInfoState extends State<CartInfo> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.sp),
                                                             child:
                                                                 FadedScaleAnimation(
                                                               Image.network(
@@ -444,11 +444,11 @@ class _CartInfoState extends State<CartInfo> {
                                 () => widget.controller.cart.value.cartData ==
                                         null
                                     ? Container(
-                                        padding: EdgeInsets.only(top: 50),
+                                        padding: EdgeInsets.only(top: 30.sp),
                                         child: Center(
                                           child: Text(
                                             "cartIsEmpty".tr,
-                                            style: TextStyle(fontSize: 22.sp,color: BasicColors.getBlackWhiteColor() ),),),
+                                            style: TextStyle(fontSize: 18.sp,color: BasicColors.getBlackWhiteColor() ),),),
                                       )
                                     // controller.selectedCategoryIndex.value == widget.controller.cart.value.cartData?
                                     : AbsorbPointer(
@@ -736,7 +736,7 @@ class _CartInfoState extends State<CartInfo> {
                                                                               backgroundColor:
                                                                               Colors.red,
                                                                               textColor: Colors.white,
-                                                                              fontSize: 18.0.sp);
+                                                                              fontSize: 12.0.sp);
                                                                           log("Quantity cannot exceed");
                                                                           widget.controller.cart.value.cartData![index].qty = widget.controller.cart.value.cartData![index].term?.price?.quantity.toString();
                                                                           updateQty(
@@ -1255,11 +1255,11 @@ class _CartInfoState extends State<CartInfo> {
         onTap: () {
           controller.getSquareCart(widget.table.id.toString());
         },
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+        margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 4.w),
         title: Text(
           "itemsInCart".tr + " (${cartCount.toString()})",
-          style: TextStyle(color: BasicColors.white, fontSize: 22.sp),
+          style: TextStyle(color: BasicColors.white, fontSize: 18.sp),
         ),
         bgColor: cartCount == 0
             ? BasicColors.secondaryColor
@@ -1281,11 +1281,11 @@ class _CartInfoState extends State<CartInfo> {
         onTap: () {
           controller.getCart(widget.table.id.toString());
         },
-        padding: EdgeInsets.symmetric(vertical: 5.sp, horizontal: 10.sp),
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 8.w),
+        margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 3.w),
         title: Text(
           "itemsInCart".tr + " (${cartCount.toString()})",
-          style: TextStyle(color: BasicColors.white, fontSize: 16.sp),
+          style: TextStyle(color: BasicColors.white, fontSize: 14.sp),
         ),
         bgColor: cartCount == 0
             ? BasicColors.secondaryColor

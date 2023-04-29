@@ -6,18 +6,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Sorder.dart';
-import 'package:hungerz_ordering/model/area_response.dart';
-import 'package:hungerz_ordering/model/order.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
-import 'package:hungerz_ordering/pages/splash.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
-import 'package:hungerz_ordering/widgets/logo_widget.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Sorder.dart';
+import 'package:Mealsmash_Waiter/model/area_response.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/pages/splash.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/widgets/logo_widget.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 import 'package:date_time_format/date_time_format.dart';
 import 'package:pusher_client/pusher_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -203,9 +203,9 @@ class _TableSelectionPageState extends State<TableSelectionPage> {
                       // color: Colors.green,
                       // height: 40.h,
                       // width: MediaQuery.of(context).size.width*0.2.w,
-width: 50.w,
+width: 60.w,
           // height: 100.h,
-          margin: EdgeInsets.all(8.0),
+          margin: EdgeInsets.all(4.0.sp),
                       // padding:
                       //     EdgeInsets.symmetric(horizontal: 15.0, vertical: 2),
                       // decoration: BoxDecoration(
@@ -225,29 +225,35 @@ width: 50.w,
                         controller.areaNames.isEmpty?Text(
                          "No Area",
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 11.sp,
                             color:
                             Theme.of(context).scaffoldBackgroundColor,
                           ),
                         )
-                            :Text(
+                            :Padding(
+                              padding:  EdgeInsets.symmetric(horizontal: 8.0.sp),
+                              child: Text(
                           controller.areaNames.value.first.areaName
-                              .toString(),
-                                style: TextStyle(
-                                  fontSize: 11.sp,
-                                  color:
-                                      Theme.of(context).scaffoldBackgroundColor,
+                                .toString(),
+                                  style: TextStyle(
+                                    fontSize: 12.sp,
+                                    color:
+                                        Theme.of(context).scaffoldBackgroundColor,
+                                  ),
                                 ),
-                              )
+                            )
                             :
-                        Text(
-                                dropDownValue!.areaName.toString(),
-                                style: TextStyle(
-                                  fontSize: 16.sp,
-                                  color:
-                                      Theme.of(context).scaffoldBackgroundColor,
+                        Padding(
+                          padding:  EdgeInsets.symmetric(horizontal: 8.0.sp),
+                          child: Text(
+                                  dropDownValue!.areaName.toString(),
+                                  style: TextStyle(
+                                    fontSize: 11.sp,
+                                    color:
+                                        Theme.of(context).scaffoldBackgroundColor,
+                                  ),
                                 ),
-                              ),
+                        ),
 
                         // Down Arrow Icon
                         icon:  Icon(
@@ -262,7 +268,7 @@ width: 50.w,
                         //     EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                         buttonDecoration: BoxDecoration(
                           color: BasicColors.primaryColor,
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderRadius: BorderRadius.circular(5.0.sp),
                         ),
                         dropdownDecoration:BoxDecoration(
                           color: BasicColors.primaryColor,
@@ -309,10 +315,10 @@ width: 50.w,
                       child: Container(
                         // height: 100.h,
                         width: 60.w,
-                        margin: EdgeInsets.all(8.0),
+                        margin: EdgeInsets.all(4.0.sp),
                         decoration: BoxDecoration(
                           color: BasicColors.primaryColor,
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderRadius: BorderRadius.circular(5.0.sp),
 
 
                         ),
@@ -321,10 +327,13 @@ width: 50.w,
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                           children: [
-                            Text("Orders", style: TextStyle(fontSize: 11.sp),),
+                            Padding(
+                              padding:  EdgeInsets.symmetric(horizontal: 4.0.sp),
+                              child: Text("Orders", style: TextStyle(fontSize: 11.sp),),
+                            ),
                             Image.asset(
                               "assets/orderHistory.png",
-                              width: 20.0.w,
+                              width: 16.0.w,
                               // height: 30.0.h,
                               color: BasicColors.white,
                             ),
@@ -382,8 +391,8 @@ width: 50.w,
                       },
                       child: Container(
                         // height: 100.h,
-                        width: 65.w,
-                        margin: EdgeInsets.all(8.0.sp),
+                        width: 62.w,
+                        margin: EdgeInsets.all(4.0.sp),
                         decoration: BoxDecoration(
                           color: BasicColors.primaryColor,
                           borderRadius: BorderRadius.circular(5.0.sp),
@@ -395,10 +404,13 @@ width: 50.w,
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                           children: [
-                            Text("Take Awa\ny", style: TextStyle(fontSize: 11.sp),),
+                            Padding(
+                              padding:  EdgeInsets.symmetric(horizontal: 6.0.sp),
+                              child: Text("Take Away", style: TextStyle(fontSize: 8.sp),),
+                            ),
                             Image.asset(
                               "assets/take_away.png",
-                              width: 18.0.w,
+                              width: 10.0.w,
                               // height: 30.0.h,
                               color: BasicColors.white,
                             ),

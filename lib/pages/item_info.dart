@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Scart.dart';
-import 'package:hungerz_ordering/model/cart_response.dart';
-import 'package:hungerz_ordering/model/categories_response.dart';
-import 'package:hungerz_ordering/model/modifiers.dart';
-import 'package:hungerz_ordering/model/squarecategories.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Scart.dart';
+import 'package:Mealsmash_Waiter/model/cart_response.dart';
+import 'package:Mealsmash_Waiter/model/categories_response.dart';
+import 'package:Mealsmash_Waiter/model/modifiers.dart';
+import 'package:Mealsmash_Waiter/model/squarecategories.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // var priice;
 double sum=0.0;
@@ -1703,12 +1703,12 @@ if(isadding){
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
+                          horizontal: 10.w, vertical: 10.h),
                       padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 15),
+                          horizontal: 15.w, vertical: 15.h),
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.sp),
                         color: BasicColors.getWhiteBlackColor(),
                       ),
                       child: RichText(
@@ -1716,7 +1716,7 @@ if(isadding){
                             TextSpan(
                                 text: "description".tr + '\n\n',
                                 style: TextStyle(
-                                    fontSize: 16.sp,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w500,
                                     letterSpacing: 1.5.sp,
                                     color: BasicColors.secondaryColor)),
@@ -1724,7 +1724,7 @@ if(isadding){
                                 text:
                                 '${controller.selectedProduct.value.description}',
                                 style: TextStyle(
-                                  fontSize: 20.sp,
+                                  fontSize: 16.sp,
                                   height: 1.3.h,
                                   color: BasicColors.getBlackWhiteColor(),
                                 )),
@@ -2094,18 +2094,18 @@ if(isadding){
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
+                    margin: EdgeInsets.symmetric(vertical: 8.h),
                     child: Text(
                       // ${controller.cart.value.cartData![index].variantPrice != null ? double.parse(controller.cart.value.cartData![index].variantPrice.toString()) : double.parse("0.0")}
-                      "${op.name}   ".toUpperCase(),
+                      "${op.name}".toUpperCase(),
                       style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 16.sp,
                           color: BasicColors.getBlackWhiteColor(),
                           fontWeight: FontWeight.w800),
                     ),
                   ),
                   Container(
-                    height: MediaQuery.of(context).size.height*0.06.h,
+                    height: MediaQuery.of(context).size.height*0.04.h,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
@@ -2113,7 +2113,7 @@ if(isadding){
                         itemBuilder: (context, i) {
                           return Container(
                             margin: EdgeInsets.only(
-                              right: 10,
+                              right: 8.w,
                             ),
                             child: Obx(() => FilterItemLayout(
                               title: listOptions[i],
@@ -2409,11 +2409,11 @@ if(isadding){
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+          padding:  EdgeInsets.only(top: 8.sp, left: 8.sp, right: 7.sp),
           child: Text(
             "extras".tr,
             style: TextStyle(
-                fontSize: 20.sp, color: BasicColors.getBlackWhiteColor()),
+                fontSize: 16.sp, color: BasicColors.getBlackWhiteColor()),
           ),
         ),
         Obx(
@@ -2427,8 +2427,8 @@ if(isadding){
                 // priice=controller.allExtras[index].price.toString();
                 return  Row(
 
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
                       child: Row(
@@ -2476,7 +2476,7 @@ if(isadding){
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 20),
+                      margin: EdgeInsets.only(right: 10.sp),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -2485,14 +2485,14 @@ if(isadding){
                             "+",
                             style: TextStyle(
                                 color: BasicColors.secondaryColor,
-                                fontSize: 20.sp,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w400),
                           ),
                           Text(
                             "\$ ${controller.allExtras[index].price.toString()}",
                             style: TextStyle(
                                 color: BasicColors.secondaryColor,
-                                fontSize: 20.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w400),
                           ),
                         ],
@@ -2509,21 +2509,21 @@ if(isadding){
               "SubTotal  ",
               style: TextStyle(
                   color: BasicColors.secondaryColor,
-                  fontSize: 20.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold),
             ),
             extraPrice==null?   Text(
               "\$${sum.toString()}",
               style: TextStyle(
                   color: BasicColors.secondaryColor,
-                  fontSize: 20.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold),
             ):
             Text(
               "\$${double.parse(sum.toString())+double.parse(extraPrice.toString())}",
               style: TextStyle(
                   color: BasicColors.secondaryColor,
-                  fontSize: 20.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold),
             ),
           ],
@@ -2551,7 +2551,7 @@ class FilterItemLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 5.sp),
         backgroundColor: isActive
             ? BasicColors.primaryColor
             : BasicColors.secondSecondaryColor,
@@ -2564,10 +2564,10 @@ class FilterItemLayout extends StatelessWidget {
               color: controller.isDarkTheme.value
                   ? Colors.black
                   : Colors.white,
-              fontWeight: FontWeight.bold, fontSize: 20.sp)
+              fontWeight: FontWeight.bold, fontSize: 16.sp)
               : TextStyle(
             color: BasicColors.black,
-              fontSize: 20.sp
+              fontSize: 16.sp
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final Widget? title;
@@ -31,7 +32,7 @@ class CustomButton extends StatelessWidget {
           color: bgColor == null ? BasicColors.primaryColor : bgColor,
         ),
         margin: margin == null ? EdgeInsets.symmetric() : margin,
-        padding: padding ?? EdgeInsets.symmetric(vertical: 4, horizontal: 6),
+        padding: padding ?? EdgeInsets.symmetric(vertical: 4.sp, horizontal: 6.sp),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

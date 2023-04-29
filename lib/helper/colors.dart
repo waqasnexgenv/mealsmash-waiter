@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
 
 class LightColors {
   static Color statusBarColor = BasicColors.white;

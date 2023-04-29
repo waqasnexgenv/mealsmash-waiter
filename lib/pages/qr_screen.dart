@@ -2,11 +2,12 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../helper/strings.dart';
@@ -104,7 +105,7 @@ bool isadding= false;
               isadding
                   ? kLoadingWidget(
                   loaderColor: BasicColors.loaderColor,
-                  size: 32)
+                  size: 32.sp)
                   :
               Center(
                 child: SingleChildScrollView(
@@ -113,16 +114,16 @@ bool isadding= false;
                       QrImage(
                         data: "${token.toString()}",
                         version: QrVersions.auto,
-                        size: MediaQuery.of(context).size.height * 0.4,
+                        size: MediaQuery.of(context).size.height * 0.4.h,
                         backgroundColor: BasicColors.white,
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 5.sp,
                       ),
                       Text(
                         "scanWithBullsEye".tr.toUpperCase(),
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 15.sp,
                             color: BasicColors.getBlackWhiteColor()),
                       ),
                     ],
@@ -131,23 +132,23 @@ bool isadding= false;
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 3.sp,
             ),
             Text(
               "orderNumberIs".tr.toUpperCase(),
               style: TextStyle(
-                  fontSize: 20, color: BasicColors.getBlackWhiteColor()),
+                  fontSize: 18, color: BasicColors.getBlackWhiteColor()),
             ),
             SizedBox(
-              height: 5,
+              height: 5.h,
             ),
             Text(
               "$orderId".tr.toUpperCase(),
               style: TextStyle(
-                  fontSize: 40, color: BasicColors.getBlackWhiteColor()),
+                  fontSize: 40.sp, color: BasicColors.getBlackWhiteColor()),
             ),
             SizedBox(
-              height: 20,
+              height: 16.sp,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -159,11 +160,11 @@ bool isadding= false;
                   child: Text(
                     "goBack".tr,
                     style: TextStyle(
-                        fontSize: 22, color: BasicColors.primaryColor),
+                        fontSize: 18.sp, color: BasicColors.primaryColor),
                   ),
                 ),
                 SizedBox(
-                  width: 30,
+                  width: 20.sp,
                 ),
                 InkWell(
                   onTap: () async {
@@ -185,13 +186,13 @@ bool isadding= false;
                   child: Text(
                     "Receipt".tr,
                     style: TextStyle(
-                        fontSize: 22, color: BasicColors.primaryColor),
+                        fontSize: 18.sp, color: BasicColors.primaryColor),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 20.sp,
             ),
           ],
         ),

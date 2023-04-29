@@ -2,16 +2,16 @@
 //
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
-// import 'package:hungerz_ordering/controllers/common_controller.dart';
-// import 'package:hungerz_ordering/helper/colors.dart';
-// import 'package:hungerz_ordering/helper/config.dart';
-// import 'package:hungerz_ordering/helper/routes.dart';
-// import 'package:hungerz_ordering/helper/strings.dart';
-// import 'package:hungerz_ordering/model/Sorder.dart';
-// import 'package:hungerz_ordering/model/order.dart';
-// import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
-// import 'package:hungerz_ordering/widgets/entry_field.dart';
-// import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+// import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+// import 'package:Mealsmash_Waiter/helper/colors.dart';
+// import 'package:Mealsmash_Waiter/helper/config.dart';
+// import 'package:Mealsmash_Waiter/helper/routes.dart';
+// import 'package:Mealsmash_Waiter/helper/strings.dart';
+// import 'package:Mealsmash_Waiter/model/Sorder.dart';
+// import 'package:Mealsmash_Waiter/model/order.dart';
+// import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
+// import 'package:Mealsmash_Waiter/widgets/entry_field.dart';
+// import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 //
 // class PayNowPage extends StatefulWidget {
 //   bool isPayAsCashClicked = false;
@@ -1380,16 +1380,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Sorder.dart';
-import 'package:hungerz_ordering/model/order.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
-import 'package:hungerz_ordering/widgets/entry_field.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Sorder.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/widgets/entry_field.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 
 class PayNowPage extends StatefulWidget {
   bool isPayAsCashClicked = false;
@@ -1416,6 +1416,36 @@ class _PayNowPageState extends State<PayNowPage> {
   final TextEditingController amountController = TextEditingController();
   final TextEditingController discountController = TextEditingController();
   dynamic params;
+
+  List<KeyboardKey> get keyboardKeys =>   [
+  KeyboardKey("1", KeyboardKeyType.insert, "1"),
+  KeyboardKey("2", KeyboardKeyType.insert, "2"),
+  KeyboardKey("3", KeyboardKeyType.insert, "3"),
+    KeyboardKey("$nearestRoundOf",
+        KeyboardKeyType.update, "$nearestRoundOf"),
+  // KeyboardKey("Fixed", KeyboardKeyType.fixed, ""),
+  KeyboardKey("4", KeyboardKeyType.insert, "4"),
+  KeyboardKey("5", KeyboardKeyType.insert, "5"),
+  KeyboardKey("6", KeyboardKeyType.insert, "6"),
+    KeyboardKey("$nearestTenthValue",
+        KeyboardKeyType.update, "$nearestTenthValue"),
+  // KeyboardKey("Percent", KeyboardKeyType.percent, ""),
+  KeyboardKey("7", KeyboardKeyType.insert, "7"),
+  KeyboardKey("8", KeyboardKeyType.insert, "8"),
+  KeyboardKey("9", KeyboardKeyType.insert, "9"),
+    KeyboardKey("${nearestTenthValue + 10}",
+        KeyboardKeyType.update, "${nearestTenthValue + 10}"),
+    KeyboardKey("C", KeyboardKeyType.clear, ""),
+    KeyboardKey("0", KeyboardKeyType.insert, "0"),
+    KeyboardKey(".", KeyboardKeyType.insert, "."),
+    KeyboardKey("x", KeyboardKeyType.remove, ""),
+  ];
+
+  get nearestRoundOf =>  double.parse(priceDouble.toStringAsFixed(0));
+
+  get priceDouble => double.parse("${order!.total.toString()}");
+
+  get nearestTenthValue =>  getNearestTenthValue(nearestRoundOf);
 
   @override
   void initState() {
@@ -1474,13 +1504,26 @@ class _PayNowPageState extends State<PayNowPage> {
                 Center(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 30),
+                      padding: EdgeInsets.symmetric(horizontal: 8.sp),
                       child: Column(
                         children: [
                           getCashPayScreen(),
                           SizedBox(
                             height: 20.h,
                           ),
+
+                          Container(
+                            // height:100.h,
+                             // width: .w,
+
+                            // MediaQuery.of(context).size.height / 2.8.h,
+                            // width: MediaQuery.of(context).size.width /3.5.w,
+                            // color:Colors.yellow,
+
+                            padding:  EdgeInsets.only(left: 80.sp,right: 80.sp),
+                            child: getKeyBoardGridView2(keyboardKeys, amountController),
+                          ),
+
                           Text(
                             "payVia".tr,
                             style: TextStyle(
@@ -1559,8 +1602,8 @@ class _PayNowPageState extends State<PayNowPage> {
                                   child: Column(
                                     children: [
                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width*0.17,
-                                        height: MediaQuery.of(context).size.height*0.09,
+                                        width: MediaQuery.of(context).size.width*0.14,
+                                        height: MediaQuery.of(context).size.height*0.06,
                                         child: Image.asset(
                                           "assets/pay_via_card.png",
                                           fit: BoxFit.fill,
@@ -1613,8 +1656,8 @@ class _PayNowPageState extends State<PayNowPage> {
                                   child: Column(
                                     children: [
                                       SizedBox(
-                                        width: MediaQuery.of(context).size.width*0.17,
-                                        height: MediaQuery.of(context).size.height*0.09,
+                                        width: MediaQuery.of(context).size.width*0.14,
+                                        height: MediaQuery.of(context).size.height*0.06,
                                         child: Image.asset(
                                           "assets/pay_via_cash.png",
                                           fit: BoxFit.fill,
@@ -1629,6 +1672,7 @@ class _PayNowPageState extends State<PayNowPage> {
                                             color: BasicColors
                                                 .getBlackWhiteColor(),fontSize: 18.sp),
                                       ),
+
                                     ],
                                   ),
                                 ),
@@ -2084,7 +2128,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             child: Text(
                               "subTotal".tr,
                               style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 13.sp,
                                 letterSpacing: 1.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.getBlackWhiteColor(),
@@ -2096,7 +2140,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             double.parse("${order?.subtotal}")
                                 .toStringAsFixed(Config.fractionDigits),
                             style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 14.sp,
                               letterSpacing: 2,
                               fontWeight: FontWeight.bold,
                               color: BasicColors.getBlackWhiteColor(),
@@ -2116,7 +2160,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             child: Text(
                               "discount".tr,
                               style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 14.sp,
                                 letterSpacing: 1.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.getBlackWhiteColor(),
@@ -2128,7 +2172,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             double.parse("${order?.discount}")
                                 .toStringAsFixed(Config.fractionDigits),
                             style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 14.sp,
                               letterSpacing: 2,
                               fontWeight: FontWeight.bold,
                               color: BasicColors.getBlackWhiteColor(),
@@ -2155,7 +2199,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             child: Text(
                               "tax".tr,
                               style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 14.sp,
                                 letterSpacing: 1.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.getBlackWhiteColor(),
@@ -2167,7 +2211,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             double.parse("${order?.tax}")
                                 .toStringAsFixed(Config.fractionDigits),
                             style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 14.sp,
                               letterSpacing: 2,
                               fontWeight: FontWeight.bold,
                               color: BasicColors.getBlackWhiteColor(),
@@ -2187,7 +2231,7 @@ class _PayNowPageState extends State<PayNowPage> {
                             child: Text(
                               "change".tr,
                               style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 14.sp,
                                 letterSpacing: 1.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.getBlackWhiteColor(),
@@ -2198,7 +2242,7 @@ class _PayNowPageState extends State<PayNowPage> {
                           Text(
                             "${widget.change}",
                             style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 14.sp,
                               letterSpacing: 2,
                               fontWeight: FontWeight.bold,
                               color: BasicColors.getBlackWhiteColor(),
@@ -2218,14 +2262,14 @@ class _PayNowPageState extends State<PayNowPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 250.w,
+                    width: 190.w,
                     child: GestureDetector(
                       onTap: () {
                         controller.isDiscountBtnClicked.value = true;
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(35.sp),
+                            borderRadius: BorderRadius.circular(22.sp),
                             color: BasicColors.transparentColor,
                             border: Border.all(
                               color: BasicColors.getBlackWhiteColor(),
@@ -2241,8 +2285,8 @@ class _PayNowPageState extends State<PayNowPage> {
                             Text(
                               "discount".tr.toUpperCase(),
                               style: TextStyle(
-                                fontSize: 18.sp,
-                                letterSpacing: 1,
+                                fontSize: 16.sp,
+                                letterSpacing: 1.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.getBlackWhiteColor(),
                                 // color: BasicColors.secondaryColor as Color
@@ -2312,10 +2356,12 @@ class _PayNowPageState extends State<PayNowPage> {
   getKeyBoardGridView(
       List<KeyboardKey> keyboardKeys, TextEditingController textController,
       {bool isDiscount = false}) {
-    double itemWidthHeight =  (Get.width / 2.4) / 4.5;
+    double itemWidthHeight =
+        (Get.width / 2.4) / 4.5;
 
     // (Get.width / 3.5) / 4;
 
+    log("Item Widht and Height: ${itemWidthHeight.toString()}");
     log("Item Widht and Height: ${itemWidthHeight.toString()}");
 
     return Container(
@@ -2330,9 +2376,9 @@ class _PayNowPageState extends State<PayNowPage> {
         physics: NeverScrollableScrollPhysics(),
 
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1/0.8,
+          childAspectRatio: 3/5,
           crossAxisCount: 4,
-          crossAxisSpacing: 22,
+          crossAxisSpacing: 4,
           mainAxisSpacing: 2,
 
         ),
@@ -2397,8 +2443,10 @@ class _PayNowPageState extends State<PayNowPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: itemWidthHeight,
-                    height: itemWidthHeight,
+                    // width: itemWidthHeight.sp,
+                    // height: itemWidthHeight.sp,
+                    width: 130.w,
+                    height: 50.h,
                     alignment: Alignment.center,
                     child: (keyboardKey.type == KeyboardKeyType.done)
                         ? Icon(
@@ -2576,7 +2624,8 @@ class _PayNowPageState extends State<PayNowPage> {
   getKeyBoardGridView2(
       List<KeyboardKey> keyboardKeys, TextEditingController textController,
       {bool isDiscount = false}) {
-    double itemWidthHeight =  (Get.width / 4.1) / 4.9;
+    double itemWidthHeight = 31.0.sp;
+        // (Get.width / 4.1) / 4.9;
 
     // (Get.width / 3.5) / 4;
 
@@ -2584,8 +2633,10 @@ class _PayNowPageState extends State<PayNowPage> {
 
     return Container(
         // color:Colors.red,
-        height: MediaQuery.of(context).size.height /2.8.h,
-        width: MediaQuery.of(context).size.width /4.5.h,
+        // height: MediaQuery.of(context).size.height /2.8.h,
+        // width: MediaQuery.of(context).size.width /4.5.h,
+      // height: 200.h,
+      //   width: 600.w,
         child:
 
         // MediaQuery.of(context).size.width < 1200?
@@ -2594,9 +2645,11 @@ class _PayNowPageState extends State<PayNowPage> {
           physics: NeverScrollableScrollPhysics(),
 
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1/0.87,
+            // childAspectRatio:100/150,
+            childAspectRatio: 1.99/5,
+            // 1.99/5,
             crossAxisCount: 4,
-            crossAxisSpacing: 14,
+            crossAxisSpacing: 22,
             mainAxisSpacing: 0,
 
           ),
@@ -2660,6 +2713,51 @@ class _PayNowPageState extends State<PayNowPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // Container(
+                    //   width: itemWidthHeight,
+                    //   height: itemWidthHeight,
+                    //   alignment: Alignment.center,
+                    //   child: (keyboardKey.type == KeyboardKeyType.done)
+                    //       ? Icon(
+                    //     Icons.done,
+                    //     color: BasicColors.primaryColor,
+                    //     size: 32.sp,
+                    //   )
+                    //       : (keyboardKey.type == KeyboardKeyType.remove)
+                    //       ? Icon(
+                    //     Icons.backspace_outlined,
+                    //     color: BasicColors.black,
+                    //   )
+                    //       : Text(
+                    //     keyboardKey.value,
+                    //     style: TextStyle(
+                    //         fontSize: 20.sp,
+                    //         color: (keyboardKey.type ==
+                    //             KeyboardKeyType.fixed &&
+                    //             discountType == 0)
+                    //             ? BasicColors.white
+                    //             : (keyboardKey.type ==
+                    //             KeyboardKeyType.percent &&
+                    //             discountType == 1)
+                    //             ? BasicColors.white
+                    //             : (keyboardKey.type ==
+                    //             KeyboardKeyType.update)
+                    //             ? BasicColors.white
+                    //             : BasicColors.black),
+                    //   ),
+                    //   decoration: BoxDecoration(
+                    //     color: (keyboardKey.type == KeyboardKeyType.fixed &&
+                    //         discountType == 0)
+                    //         ? BasicColors.primaryColor
+                    //         : (keyboardKey.type == KeyboardKeyType.percent &&
+                    //         discountType == 1)
+                    //         ? BasicColors.primaryColor
+                    //         : (keyboardKey.type == KeyboardKeyType.update)
+                    //         ? BasicColors.primaryColor
+                    //         : Colors.grey[200],
+                    //     // borderRadius: BorderRadius.circular(itemWidthHeight / 4),
+                    //   ),
+                    // )
                     Container(
                       width: itemWidthHeight,
                       height: itemWidthHeight,
@@ -2668,17 +2766,18 @@ class _PayNowPageState extends State<PayNowPage> {
                           ? Icon(
                         Icons.done,
                         color: BasicColors.primaryColor,
-                        size: 32.sp,
+                        size: 11.sp,
                       )
                           : (keyboardKey.type == KeyboardKeyType.remove)
                           ? Icon(
                         Icons.backspace_outlined,
                         color: BasicColors.black,
+                        size: 11.sp,
                       )
                           : Text(
                         keyboardKey.value,
                         style: TextStyle(
-                            fontSize: 20.sp,
+                            fontSize: 12.sp,
                             color: (keyboardKey.type ==
                                 KeyboardKeyType.fixed &&
                                 discountType == 0)
@@ -2693,6 +2792,8 @@ class _PayNowPageState extends State<PayNowPage> {
                                 : BasicColors.black),
                       ),
                       decoration: BoxDecoration(
+
+
                         color: (keyboardKey.type == KeyboardKeyType.fixed &&
                             discountType == 0)
                             ? BasicColors.primaryColor
@@ -2858,22 +2959,23 @@ class _PayNowPageState extends State<PayNowPage> {
     ];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 240.0),
+      padding:  EdgeInsets.symmetric(horizontal: 95.0.w),
       child: Container(
         // width: Get.width / 1.6.w,
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.all(5.sp),
         decoration: BoxDecoration(
           color: BasicColors.white,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.sp),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding:  EdgeInsets.all(5.0.sp),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                color: BasicColors.white,
-                margin: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+                color: Colors.white,
+                // BasicColors,
+                margin: EdgeInsets.symmetric(horizontal: 3.w,vertical: 8.h),
                 child: EntryField(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: BasicColors.primaryColor),

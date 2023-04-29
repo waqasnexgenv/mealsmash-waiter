@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
-import 'package:hungerz_ordering/pages/cart_info.dart';
-import 'package:hungerz_ordering/widgets/build_items.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/pages/cart_info.dart';
+import 'package:Mealsmash_Waiter/widgets/build_items.dart';
 
 import 'item_info.dart';
 

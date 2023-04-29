@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:hungerz_ordering/model/order.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
 
 import '../common_controller.dart';
 

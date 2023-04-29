@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
 
 class EntryField extends StatelessWidget {
   final TextEditingController? controller;

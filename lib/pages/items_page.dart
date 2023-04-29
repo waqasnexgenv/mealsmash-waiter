@@ -4,21 +4,21 @@ import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Sorder.dart';
-import 'package:hungerz_ordering/model/categories_response.dart';
-import 'package:hungerz_ordering/model/order.dart';
-import 'package:hungerz_ordering/model/squarecategories.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
-import 'package:hungerz_ordering/pages/cart_info.dart';
-import 'package:hungerz_ordering/pages/item_info.dart';
-import 'package:hungerz_ordering/widgets/build_items.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
-import 'package:hungerz_ordering/widgets/logo_widget.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Sorder.dart';
+import 'package:Mealsmash_Waiter/model/categories_response.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
+import 'package:Mealsmash_Waiter/model/squarecategories.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/pages/cart_info.dart';
+import 'package:Mealsmash_Waiter/pages/item_info.dart';
+import 'package:Mealsmash_Waiter/widgets/build_items.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/widgets/logo_widget.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'order_info.dart';
@@ -147,8 +147,8 @@ class _ItemsPageState extends State<ItemsPage> {
                               table.ongoing_order_square == null
                           ? null
                           : Container(
-                              height: 60.0.h,
-                              width: 210.0.w,
+                              height: 40.0.h,
+                              width: 130.0.w,
                               child: FittedBox(
                                 child: FloatingActionButton.extended(
                                   backgroundColor: BasicColors.primaryColor,
@@ -162,7 +162,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0)),
+                                                            2.0.sp)),
                                                 child: Stack(
                                                   clipBehavior: Clip.none,
                                                   // overflow: Overflow.visible,
@@ -172,6 +172,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                     Container(
                                                       height: MediaQuery.of(context).size.height * 0.5.h,
                                                       width: MediaQuery.of(context).size.width * 0.6.w,
+                                                      // height: 50,
                                                       // height: MediaQuery.of(context).size.width < 950? MediaQuery.of(context).size.height*0.88:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.height*0.48: MediaQuery.of(context).size.height*0.25,
                                                       // width: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.56:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.width*0.45: MediaQuery.of(context).size.width*0.3,
 
@@ -183,9 +184,10 @@ class _ItemsPageState extends State<ItemsPage> {
                                                           children: [
                                                             Spacer(),
 
-                                                            // SizedBox(
-                                                            //   height: MediaQuery.of(context).size.height*0.00,
-                                                            // ),
+                                                            SizedBox(
+                                                              height: 30.h
+                                                              // MediaQuery.of(context).size.height*0.00,
+                                                            ),
                                                             Text(
                                                               "Complete Order"
                                                                   .tr,
@@ -194,7 +196,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                                       FontWeight
                                                                           .bold,
                                                                   fontSize:
-                                                                      22.sp,
+                                                                      18.sp,
                                                                   color: BasicColors
                                                                       .black),
                                                             ),
@@ -224,7 +226,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                                       .center,
                                                               style: TextStyle(
                                                                   fontSize:
-                                                                      22.sp,
+                                                                      18.sp,
                                                                   color: BasicColors
                                                                       .black),
                                                             ),
@@ -381,7 +383,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                                               borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.03.w),
                                                                             ),
                                                                             child: TextButton(
-                                                                              child: Text("payNow".tr, style: TextStyle(color: BasicColors.white, fontSize: 20.sp)),
+                                                                              child: Text("payNow".tr, style: TextStyle(color: BasicColors.white, fontSize: 18.sp)),
                                                                               onPressed: () async {
                                                                                 Get.back();
                                                                                 stopTimer();
@@ -456,7 +458,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                   icon: Icon(
                                     Icons.done,
                                     color: BasicColors.white,
-                                    size: 34.sp,
+                                    size: 22.sp,
                                   ),
                                   label: Text("Complete Order"),
                                 ),
@@ -500,7 +502,7 @@ class _ItemsPageState extends State<ItemsPage> {
                         padding:
                             EdgeInsets.symmetric(vertical: 8.sp, horizontal: 2.sp),
                         child: TextFormField(
-                          style: TextStyle(fontSize: 18.sp),
+                          style: TextStyle(fontSize: 14.sp),
                           controller: searchTextController,
                           textAlignVertical: TextAlignVertical.center,
                           cursorColor: BasicColors.primaryColor,
@@ -543,13 +545,13 @@ class _ItemsPageState extends State<ItemsPage> {
                                 ),
                               ),
                               hintText: "searchItem".tr,
-                              hintStyle: TextStyle(fontSize: 18.sp),
+                              hintStyle: TextStyle(fontSize: 14.sp),
                               contentPadding: EdgeInsets.symmetric(vertical: 0),
                               filled: true,
                               fillColor: BasicColors.secondSecondaryColor,
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
-                                  borderRadius: BorderRadius.circular(20.sp))),
+                                  borderRadius: BorderRadius.circular(16.sp))),
                         ),
                       ),
                       table.ongoingOrder == null &&
@@ -660,14 +662,14 @@ class _ItemsPageState extends State<ItemsPage> {
                                               children: [
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsets.only(
-                                                          right: 16.0,
-                                                          top: 8.0),
+                                                       EdgeInsets.only(
+                                                          right: 10.0.sp,
+                                                          top: 8.0.sp),
                                                   child: Icon(
                                                     Icons.shopping_cart,
                                                     color: BasicColors
                                                         .primaryColor,
-                                                    size: 30.sp,
+                                                    size: 20.sp,
                                                   ),
                                                 ),
                                                 Positioned(
@@ -677,7 +679,7 @@ class _ItemsPageState extends State<ItemsPage> {
                                                       children: <Widget>[
                                                         new Icon(
                                                             Icons.brightness_1,
-                                                            size: 17.0.sp,
+                                                            size: 14.0.sp,
                                                             color:
                                                                 Colors.black26),
                                                         new Positioned(
@@ -1139,10 +1141,10 @@ class _ItemsPageState extends State<ItemsPage> {
         // print("10");
       },
       // padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      margin: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 4.sp),
       title: Text(
         "orderItems".tr + " (${onGoingOrder.orderMeta?.length})",
-        style: TextStyle(color: BasicColors.white, fontSize: 18.sp),
+        style: TextStyle(color: BasicColors.white, fontSize: 14.sp),
       ),
       bgColor: BasicColors.primaryColor,
     );

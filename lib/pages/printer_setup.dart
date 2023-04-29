@@ -11,7 +11,7 @@ import 'package:esc_pos_utils/esc_pos_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hungerz_ordering/helper/app_config.dart';
+import 'package:Mealsmash_Waiter/helper/app_config.dart';
 
 import '../helper/colors.dart';
 import '../widgets/my_back_button.dart';
@@ -28,10 +28,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_usb_printer/flutter_usb_printer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
 
-import 'package:hungerz_ordering/model/usbDevicesModel.dart';
-import 'package:hungerz_ordering/widgets/my_back_button.dart';
+import 'package:Mealsmash_Waiter/model/usbDevicesModel.dart';
+import 'package:Mealsmash_Waiter/widgets/my_back_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:intl/intl.dart';

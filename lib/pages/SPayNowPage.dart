@@ -3,16 +3,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Sorder.dart';
-import 'package:hungerz_ordering/model/order.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
-import 'package:hungerz_ordering/widgets/entry_field.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Sorder.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/widgets/entry_field.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
 
 class SPayNowPage extends StatefulWidget {
   bool isPayAsCashClicked = false;

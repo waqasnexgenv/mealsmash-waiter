@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/categories_response.dart';
-import 'package:hungerz_ordering/model/squarecategories.dart';
-import 'package:hungerz_ordering/pages/item_info.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/categories_response.dart';
+import 'package:Mealsmash_Waiter/model/squarecategories.dart';
+import 'package:Mealsmash_Waiter/pages/item_info.dart';
 
 class BuildSquareItems {
   var store_id;
@@ -180,7 +180,7 @@ class BuildItems {
             product.price?.quantity==0?
             Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.sp),
                   color: BasicColors.getWhiteBlackColor()),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -209,11 +209,11 @@ colorFilter: ColorFilter.mode( Colors.white,
                   ),
                   Spacer(),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding:  EdgeInsets.symmetric(horizontal: 5.0.sp),
                     child: Text(
                       "${product.title}",
                       style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 18.sp,
                           color: BasicColors.getBlackWhiteColor()),
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
@@ -251,7 +251,7 @@ colorFilter: ColorFilter.mode( Colors.white,
                           ,
                           style: TextStyle(
 
-                              color: BasicColors.getBlackWhiteColor(),fontSize: 20.sp),
+                              color: BasicColors.getBlackWhiteColor(),fontSize: 16.sp),
                           softWrap: true, overflow: TextOverflow.ellipsis,
                         ),
                       ],

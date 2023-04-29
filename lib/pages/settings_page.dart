@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_usb_printer/flutter_usb_printer.dart';
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/pages/printer_setup.dart';
-import 'package:hungerz_ordering/widgets/my_back_button.dart';
-import 'package:hungerz_ordering/widgets/safe_area_helper.dart';
-import 'package:hungerz_ordering/widgets/bottom_bar.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/pages/printer_setup.dart';
+import 'package:Mealsmash_Waiter/widgets/my_back_button.dart';
+import 'package:Mealsmash_Waiter/widgets/safe_area_helper.dart';
+import 'package:Mealsmash_Waiter/widgets/bottom_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {

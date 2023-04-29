@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:hungerz_ordering/locale/german.dart';
-import 'package:hungerz_ordering/locale/portuguese.dart';
-import 'package:hungerz_ordering/locale/spanish.dart';
+import 'package:Mealsmash_Waiter/locale/german.dart';
+import 'package:Mealsmash_Waiter/locale/portuguese.dart';
+import 'package:Mealsmash_Waiter/locale/spanish.dart';
 import 'arabic.dart';
 import 'english.dart';
 import 'french.dart';

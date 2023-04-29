@@ -5,16 +5,16 @@ import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hungerz_ordering/controllers/common_controller.dart';
-import 'package:hungerz_ordering/helper/colors.dart';
-import 'package:hungerz_ordering/helper/config.dart';
-import 'package:hungerz_ordering/helper/routes.dart';
-import 'package:hungerz_ordering/helper/strings.dart';
-import 'package:hungerz_ordering/model/Sorder.dart';
-import 'package:hungerz_ordering/model/cart_response.dart';
-import 'package:hungerz_ordering/model/order.dart';
-import 'package:hungerz_ordering/model/tables_response.dart';
-import 'package:hungerz_ordering/widgets/custom_circular_button.dart';
+import 'package:Mealsmash_Waiter/controllers/common_controller.dart';
+import 'package:Mealsmash_Waiter/helper/colors.dart';
+import 'package:Mealsmash_Waiter/helper/config.dart';
+import 'package:Mealsmash_Waiter/helper/routes.dart';
+import 'package:Mealsmash_Waiter/helper/strings.dart';
+import 'package:Mealsmash_Waiter/model/Sorder.dart';
+import 'package:Mealsmash_Waiter/model/cart_response.dart';
+import 'package:Mealsmash_Waiter/model/order.dart';
+import 'package:Mealsmash_Waiter/model/tables_response.dart';
+import 'package:Mealsmash_Waiter/widgets/custom_circular_button.dart';
 import 'package:get/get.dart';
 
 class OrderInfo extends StatefulWidget {
@@ -59,12 +59,12 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 15.0, horizontal: 8.0),
+                              padding:  EdgeInsets.symmetric(
+                                  vertical: 11.0.sp, horizontal: 5.0.sp),
                               child: Text(
                                 '${widget.table.name}',
                                 style: TextStyle(
-                                    fontSize: 22.sp,
+                                    fontSize: 16.sp,
                                     fontWeight: FontWeight.bold,
                                     color: BasicColors.getBlackWhiteColor()),
                               ),
@@ -415,13 +415,13 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                     child:
                                                     // FadedScaleAnimation(
                                                       SizedBox(
-                                                        width: 100.w,
-                                                        height: 100.h,
+                                                        width: 50.w,
+                                                        height: 50.h,
                                                         child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        4.sp),
                                                             child:
                                                                 // FadedScaleAnimation(
                                                               Image.network(
@@ -440,8 +440,8 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                   ),
                                                   title: Padding(
                                                     padding:
-                                                        const EdgeInsets.only(
-                                                            bottom: 10.0),
+                                                         EdgeInsets.only(
+                                                            bottom: 10.0.sp),
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -463,7 +463,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                                 style: TextStyle(
 
 
-                                                                    fontSize: 22.sp,
+                                                                    fontSize: 18.sp,
 
                                                                     color: BasicColors
                                                                         .getBlackWhiteColor()),
@@ -475,7 +475,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                             // FadedScaleAnimation(
                                                               Image.asset(
                                                                 'assets/ic_veg.png',
-                                                                height: 18.h,
+                                                                height: 16.h,
                                                               ),
                                                             //   durationInMilliseconds:
                                                             //       400,
@@ -561,20 +561,20 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                                       Text(
                                                                           "Qty: ${item.qty}",
                                                                           style:
-                                                                              TextStyle(color: BasicColors.getBlackWhiteColor(),fontSize: 22.sp),
+                                                                              TextStyle(color: BasicColors.getBlackWhiteColor(),fontSize: 18.sp),
                                                                         )
                                                                       : Container()
                                                                   : Text(
                                                                       "Qty: ${item.qty}",
                                                                       style: TextStyle(
                                                                           color:
-                                                                              BasicColors.getBlackWhiteColor(),fontSize: 22.sp),
+                                                                              BasicColors.getBlackWhiteColor(),fontSize: 18.sp),
                                                                     )
                                                               : Text(
                                                                   "Qty: ${item.qty}",
                                                                   style: TextStyle(
                                                                       color: BasicColors
-                                                                          .getBlackWhiteColor(),fontSize: 22.sp),
+                                                                          .getBlackWhiteColor(),fontSize: 18.sp),
                                                                 ),
                                                           Spacer(),
                                                           Text(
@@ -588,7 +588,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                                 "${double.parse(item.variantPrice == null ? item.total.toString() : (double.parse("${item.products!.total}") + double.parse("${item.variantPrice}")).toString()).toStringAsFixed(Config.fractionDigits)}",
                                                             style: TextStyle(
                                                                 color: BasicColors
-                                                                    .getBlackWhiteColor(),fontSize: 22.sp),
+                                                                    .getBlackWhiteColor(),fontSize: 18.sp),
                                                           )
                                                         ],
                                                       ),
@@ -612,7 +612,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                                   child: Text(
                                                                     "(${item.variantName})",
                                                                     style: TextStyle(
-                                                                        fontSize: 20.sp,
+                                                                        fontSize: 16.sp,
                                                                         color: BasicColors
                                                                             .getBlackWhiteColor()),
                                                                   ),
@@ -675,12 +675,12 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                     Text(
                                         "subTotal".tr,
                                         style: TextStyle(
-                                            fontSize: 22.sp,
+                                            fontSize: 18.sp,
                                             color:
                                                 BasicColors.getBlackWhiteColor())),
                                     Text("Tax".tr,
                                         style: TextStyle(
-                                            fontSize: 22.sp,
+                                            fontSize: 18.sp,
                                             color:
                                             BasicColors.getBlackWhiteColor())),
                                   ],
@@ -713,7 +713,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                                 }",
                                             style: TextStyle(
                                                 color: BasicColors
-                                                    .getBlackWhiteColor(),fontSize: 22.sp),
+                                                    .getBlackWhiteColor(),fontSize: 18.sp),
                                           ),
                                         Text(
                                           Config.currencySymbol +
@@ -725,7 +725,7 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                                               }",
                                           style: TextStyle(
                                               color: BasicColors
-                                                  .getBlackWhiteColor(),fontSize: 22.sp),
+                                                  .getBlackWhiteColor(),fontSize: 18.sp),
                                         ),
                                       ],
                                     ),
@@ -817,164 +817,299 @@ class _OrderInfoInfoState extends State<OrderInfo> {
     item2?.kStatus == 0?
     widget.table.ongoingOrder?.paymentStatus != "1"?
                           CustomButton(
-
                         onTap: (){
+                          Get.back();
                           showDialog(
+
                               context: context,
                               builder: (BuildContext context) {
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 260),
-                                  child: Dialog(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(4.0)),
-                                      child: Stack(
-                                        clipBehavior: Clip.none,
-                                        // overflow: Overflow.visible,
-                                        alignment: Alignment.topCenter,
-                                        children: [
-                                          Container(
-                                            height: MediaQuery.of(context).size.height* 0.5.h,
-                                            width: MediaQuery.of(context).size.width* 0.6.w,
-                                            // height: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.7:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.height*0.38: MediaQuery.of(context).size.height*0.25,
-                                            // width: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.96:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.width*0.4: MediaQuery.of(context).size.width*0.3,
-                                            child: Padding(
-                                              padding:
-                                              const EdgeInsets.fromLTRB(
-                                                  10, 20, 10, 10),
-                                              child: Column(
-                                                children: [
-                                                  // SizedBox(
-                                                  //   height: 10,
-                                                  // ),
-                                                  Spacer(),
-                                                  Text(
-                                                    "Cancel Order".tr,
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold,
-                                                        fontSize: 24.sp),
-                                                  ),
-                                                  // Spacer(),
-                                                  // SizedBox(height: 10),
-                                                  Text(
-                                                    "doYouWantToCancelOrder".tr,
-                                                    style:
-                                                    TextStyle(fontSize: 24.sp),
-                                                  ),
-                                                  Spacer(),
-                                                  // SizedBox(height: 30),
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                    children: [
-                                                      Container(
-                                                        width: MediaQuery
-                                                            .of(context)
-                                                            .size
-                                                            .width * 0.1.w,
-                                                        height: MediaQuery
-                                                            .of(context)
-                                                            .size
-                                                            .height * 0.13.h,
-                                                        decoration:
-                                                        BoxDecoration(
-                                                          color: BasicColors
-                                                              .primaryColor,
-                                                          borderRadius:
-                                                          BorderRadius.circular(
-                                                              MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.03.w),
-                                                        ),
-                                                        child: TextButton(
-                                                          child: Text("no".tr,
-                                                              style: TextStyle(
-                                                                  color: BasicColors
-                                                                      .white,fontSize: 24.sp)),
-                                                          onPressed: () {
-                                                            Get.back();
-                                                          },
-                                                        ),
+                                return Dialog(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(4.0)),
+                                    child: Stack(
+                                      clipBehavior: Clip.none,
+                                      //overflow: Overflow.visible,
+                                      alignment: Alignment.topCenter,
+                                      children: [
+                                        Container(
+                                          height: MediaQuery.of(context).size.height* 0.3.h,
+                                          width: MediaQuery.of(context).size.width* 0.6.w,
+                                          // height: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.7:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.height*0.48: MediaQuery.of(context).size.height*0.26,
+                                          // width: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.96:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.height*0.45: MediaQuery.of(context).size.height*0.45,
+                                          child: Padding(
+                                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
+                                            child: Column(
+                                              children: [
+                                                Spacer(),
+                                                // SizedBox(
+                                                //   height: MediaQuery.of(context).size.height*0.01,
+                                                // ),
+                                                Text(
+                                                  // waqas
+                                                  "alert".tr,
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 18.sp,
+                                                      color: BasicColors.black),
+                                                ),
+                                                SizedBox(   height: MediaQuery.of(context).size.height*0.01.h,),
+                                                Text(
+                                                  "doYouWantToCancelOrder".tr,
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      fontSize: 18.sp, color: BasicColors.black),
+                                                ),
+                                                Spacer(),
+                                                // SizedBox(
+                                                //   height: MediaQuery.of(context).size.height*0.02,
+                                                // ),
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                  children: [
+                                                    Container(
+                                                      // width: MediaQuery.of(context).size.width * 0.1.w,
+                                                      // height: MediaQuery.of(context).size.height * 0.13.h,
+                                                      width: MediaQuery.of(context).size.width * 0.14.w,
+                                                      height: MediaQuery.of(context).size.height * 0.06.h,
+                                                      decoration: BoxDecoration(
+                                                        color: BasicColors.primaryColor,
+                                                        borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.03.w),
                                                       ),
-                                                      SizedBox(
-                                                        width: MediaQuery.of(
-                                                            context)
-                                                            .size
-                                                            .width *
-                                                            0.02.w,
+                                                      child: TextButton(
+                                                        child: Text("no".tr,
+                                                            style: TextStyle(
+                                                                color: BasicColors.white,fontSize: 18.sp)),
+                                                        onPressed: () {
+                                                          // Navigator.pop(context);
+                                                          Get.back();
+                                                          // Get.offAllNamed(PageRoutes.splashPage);
+                                                        },
                                                       ),
-                                                      Container(
-                                                        width: MediaQuery
-                                                            .of(context)
-                                                            .size
-                                                            .width * 0.1.w,
-                                                        height: MediaQuery
-                                                            .of(context)
-                                                            .size
-                                                            .height * 0.13.h,
-                                                        decoration:
-                                                        BoxDecoration(
-                                                          color: BasicColors
-                                                              .primaryColor,
-                                                          borderRadius:
-                                                          BorderRadius.circular(
-                                                              MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.03.w),
-                                                        ),
-                                                        child: TextButton(
-                                                          child: Text("yes".tr,
-                                                              style: TextStyle(
-                                                                  color: BasicColors
-                                                                      .white,fontSize: 24.sp)),
-                                                          onPressed: () async {
-                                                            Get.back();
-                                                            widget.table.ongoingOrder == null
-                                                                  ? await widget.controller.cancelOrder(
-                                                                      "${widget.table.ongoing_order_square!.id.toString()}")
-                                                                  : await widget.controller.cancelOrder(
-                                                                      "${widget.table.ongoingOrder!.id.toString()}");
-                                                          },
-                                                        ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: MediaQuery.of(context).size.width*0.02.w,
+                                                    ),
+                                                    Container(
+                                                      // width: MediaQuery
+                                                      //     .of(context)
+                                                      //     .size
+                                                      //     .width * 0.1.w,
+                                                      // height: MediaQuery
+                                                      //     .of(context)
+                                                      //     .size
+                                                      //     .height * 0.13.h,
+                                                      width: MediaQuery.of(context).size.width * 0.16.w,
+                                                      height: MediaQuery.of(context).size.height * 0.06.h,
+                                                      decoration: BoxDecoration(
+                                                        color: BasicColors.primaryColor,
+                                                        borderRadius: BorderRadius.circular(
+                                                            MediaQuery.of(context).size.width *
+                                                                0.03.w),
                                                       ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
+                                                      child: TextButton(
+                                                        child: Text("yes".tr,
+                                                            style: TextStyle(
+                                                                color: BasicColors.white,fontSize: 18.sp)),
+                                                        onPressed: () async {
+                                                          Get.back();
+                                                                                            widget.table.ongoingOrder == null
+                                                                                                  ? await widget.controller.cancelOrder(
+                                                                                                      "${widget.table.ongoing_order_square!.id.toString()}")
+                                                                                                  : await widget.controller.cancelOrder(
+                                                                                                      "${widget.table.ongoingOrder!.id.toString()}");
+                                                        },
+                                                      ),
+                                                    ),
+
+                                                  ],
+                                                ),
+                                              ],
                                             ),
                                           ),
-                                          Positioned(
-                                              top: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  -0.03.w,
-                                              child: CircleAvatar(
-                                                backgroundColor:
-                                                Colors.redAccent,
-                                                radius: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.03.w,
-                                                child: Icon(
-                                                  Icons.warning_amber_rounded,
-                                                  color: Colors.white,
-                                                  size: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.03.w,
-                                                ),
-                                              )),
-                                        ],
-                                      )),
-                                );
+                                        ),
+
+                                        // Positioned(
+                                        //     top: MediaQuery.of(context).size.width * -0.03.w,
+                                        //     child: CircleAvatar(
+                                        //       backgroundColor: Colors.redAccent,
+                                        //       radius: MediaQuery.of(context).size.width * 0.03.w,
+                                        //       child: Icon(
+                                        //         Icons.info_outline,
+                                        //         color: Colors.white,
+                                        //         size: MediaQuery.of(context).size.width * 0.03.w,
+                                        //       ),
+                                        //     )),
+                                        Positioned(
+                                            top: MediaQuery.of(context).size.width * -0.07.w,
+                                            child: CircleAvatar(
+                                              backgroundColor: Colors.redAccent,
+                                              radius: MediaQuery.of(context).size.width * 0.1.w,
+                                              child: Icon(
+                                                Icons.warning_amber_rounded,
+                                                color: Colors.white,
+                                                size: MediaQuery.of(context).size.width * 0.1.w,
+                                              ),
+                                            )),
+                                      ],
+                                    ));
                               });
+                          // showDialog(
+                          //     context: context,
+                          //     builder: (BuildContext context) {
+                          //       return Padding(
+                          //         padding: const EdgeInsets.symmetric(horizontal: 260),
+                          //         child: Dialog(
+                          //             shape: RoundedRectangleBorder(
+                          //                 borderRadius:
+                          //                 BorderRadius.circular(4.0)),
+                          //             child: Stack(
+                          //               clipBehavior: Clip.none,
+                          //               // overflow: Overflow.visible,
+                          //               alignment: Alignment.topCenter,
+                          //               children: [
+                          //                 Container(
+                          //                   height: MediaQuery.of(context).size.height* 0.5.h,
+                          //                   width: MediaQuery.of(context).size.width* 0.6.w,
+                          //                   // height: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.7:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.height*0.38: MediaQuery.of(context).size.height*0.25,
+                          //                   // width: MediaQuery.of(context).size.width < 950?MediaQuery.of(context).size.height*0.96:  MediaQuery.of(context).size.width < 1200?MediaQuery.of(context).size.width*0.4: MediaQuery.of(context).size.width*0.3,
+                          //                   child: Padding(
+                          //                     padding:
+                          //                     const EdgeInsets.fromLTRB(
+                          //                         10, 20, 10, 10),
+                          //                     child: Column(
+                          //                       children: [
+                          //                         // SizedBox(
+                          //                         //   height: 10,
+                          //                         // ),
+                          //                         Spacer(),
+                          //                         Text(
+                          //                           "Cancel Order".tr,
+                          //                           style: TextStyle(
+                          //                               fontWeight:
+                          //                               FontWeight.bold,
+                          //                               fontSize: 18.sp),
+                          //                         ),
+                          //                         // Spacer(),
+                          //                         // SizedBox(height: 10),
+                          //                         Text(
+                          //                           "doYouWantToCancelOrder".tr,
+                          //                           style:
+                          //                           TextStyle(fontSize: 18.sp),
+                          //                         ),
+                          //                         Spacer(),
+                          //                         // SizedBox(height: 30),
+                          //                         Row(
+                          //                           mainAxisAlignment:
+                          //                           MainAxisAlignment.center,
+                          //                           crossAxisAlignment:
+                          //                           CrossAxisAlignment.center,
+                          //                           children: [
+                          //                             Container(
+                          //                               width: MediaQuery
+                          //                                   .of(context)
+                          //                                   .size
+                          //                                   .width * 0.1.w,
+                          //                               height: MediaQuery
+                          //                                   .of(context)
+                          //                                   .size
+                          //                                   .height * 0.13.h,
+                          //                               decoration:
+                          //                               BoxDecoration(
+                          //                                 color: BasicColors
+                          //                                     .primaryColor,
+                          //                                 borderRadius:
+                          //                                 BorderRadius.circular(
+                          //                                     MediaQuery.of(
+                          //                                         context)
+                          //                                         .size
+                          //                                         .width *
+                          //                                         0.03.w),
+                          //                               ),
+                          //                               child: TextButton(
+                          //                                 child: Text("no".tr,
+                          //                                     style: TextStyle(
+                          //                                         color: BasicColors
+                          //                                             .white,fontSize: 24.sp)),
+                          //                                 onPressed: () {
+                          //                                   Get.back();
+                          //                                 },
+                          //                               ),
+                          //                             ),
+                          //                             SizedBox(
+                          //                               width: MediaQuery.of(
+                          //                                   context)
+                          //                                   .size
+                          //                                   .width *
+                          //                                   0.02.w,
+                          //                             ),
+                          //                             Container(
+                          //                               width: MediaQuery
+                          //                                   .of(context)
+                          //                                   .size
+                          //                                   .width * 0.1.w,
+                          //                               height: MediaQuery
+                          //                                   .of(context)
+                          //                                   .size
+                          //                                   .height * 0.13.h,
+                          //                               decoration:
+                          //                               BoxDecoration(
+                          //                                 color: BasicColors
+                          //                                     .primaryColor,
+                          //                                 borderRadius:
+                          //                                 BorderRadius.circular(
+                          //                                     MediaQuery.of(
+                          //                                         context)
+                          //                                         .size
+                          //                                         .width *
+                          //                                         0.03.w),
+                          //                               ),
+                          //                               child: TextButton(
+                          //                                 child: Text("yes".tr,
+                          //                                     style: TextStyle(
+                          //                                         color: BasicColors
+                          //                                             .white,fontSize: 18.sp)),
+                          //                                 onPressed: () async {
+                          //                                   Get.back();
+                          //                                   widget.table.ongoingOrder == null
+                          //                                         ? await widget.controller.cancelOrder(
+                          //                                             "${widget.table.ongoing_order_square!.id.toString()}")
+                          //                                         : await widget.controller.cancelOrder(
+                          //                                             "${widget.table.ongoingOrder!.id.toString()}");
+                          //                                 },
+                          //                               ),
+                          //                             ),
+                          //                           ],
+                          //                         ),
+                          //                       ],
+                          //                     ),
+                          //                   ),
+                          //                 ),
+                          //                 // Positioned(
+                          //                 //     top: MediaQuery.of(context)
+                          //                 //         .size
+                          //                 //         .width *
+                          //                 //         -0.03.w,
+                          //                 //     child: CircleAvatar(
+                          //                 //       backgroundColor:
+                          //                 //       Colors.redAccent,
+                          //                 //       radius: MediaQuery.of(context)
+                          //                 //           .size
+                          //                 //           .width *
+                          //                 //           0.03.w,
+                          //                 //       child: Icon(
+                          //                 //         Icons.warning_amber_rounded,
+                          //                 //         color: Colors.white,
+                          //                 //         size: MediaQuery.of(context)
+                          //                 //             .size
+                          //                 //             .width *
+                          //                 //             0.03.w,
+                          //                 //       ),
+                          //                 //     )),
+                          //               ],
+                          //             )),
+                          //       );
+                          //     });
                         },
 
 
@@ -991,17 +1126,17 @@ class _OrderInfoInfoState extends State<OrderInfo> {
                         //           "${widget.table.ongoingOrder!.id.toString()}");
                         // },
                         padding:
-                            EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                            EdgeInsets.symmetric(horizontal: 30.sp, vertical: 16.sp),
                         bgColor: BasicColors.primaryColor,
                         title: (widget.controller.isCancelingOrder.value)
                             ? kLoadingWidget(loaderColor: BasicColors.white)
                             : Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(vertical: 5),
+                                     EdgeInsets.symmetric(vertical: 5.sp),
                                 child: Text(
                                   "cancelOrder".tr,
                                   style: TextStyle(
-                                      fontSize: 22.sp, color: BasicColors.white),
+                                      fontSize: 18.sp, color: BasicColors.white),
                                 ),
                               ),
                         borderRadius: 0,
@@ -1078,14 +1213,14 @@ class _OrderInfoInfoState extends State<OrderInfo> {
           Text(
             "${extra.extraName}",
             style: TextStyle(
-                fontSize: 22.sp, color: BasicColors.getBlackWhiteColor()),
+                fontSize: 18.sp, color: BasicColors.getBlackWhiteColor()),
           ),
           Spacer(),
           Text(
               Config.currencySymbol +
                   double.parse("${extra.extraPrice}")
                       .toStringAsFixed(Config.fractionDigits),
-              style: TextStyle(color: BasicColors.getBlackWhiteColor(),fontSize: 22.sp))
+              style: TextStyle(color: BasicColors.getBlackWhiteColor(),fontSize: 18.sp))
         ],
       ));
     });
@@ -1432,11 +1567,11 @@ class _OrderInfoInfoState extends State<OrderInfo> {
             },
             child: Container(
               // color: Colors.yellow,
-              height: 60.h,
-              width: 80.w,
+              height: 40.h,
+              width: 40.w,
               child: Icon(
                 Icons.delete,
-                size: 28.sp,
+                size: 18.sp,
                 color: BasicColors.getBlackWhiteColor(),
               ),
             ),

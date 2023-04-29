@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mealsmash.ordering"
+        applicationId "com.flutter.mealsmash.waiter"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()

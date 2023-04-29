@@ -222,7 +222,7 @@ class _PastOrderWidgetState extends State<PastOrderWidget> {
                           Text(
                             "${widget.order.orderTypeStatus}",
                             style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
                                 color: BasicColors.white),
                           ),
@@ -265,7 +265,7 @@ class _PastOrderWidgetState extends State<PastOrderWidget> {
                             child: Text(
                               "orderId".tr + ": ${widget.order.id.toString()}",
                               style: TextStyle(
-                                  fontSize: 18.sp,
+                                  fontSize: 16.sp,
                                   color: BasicColors.secondSecondaryColor),
                             ),
                           ),
